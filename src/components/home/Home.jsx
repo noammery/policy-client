@@ -8,7 +8,12 @@ function Home() {
   const theUser = useSelector((state) => state.theUser);
   return (
     <div className="Home">
-      <p>{theUser.name}</p>
+      {theUser.name ? (
+        <h2>Welcome back! {theUser.name}</h2>
+      ) : (
+        <h2>Please Sign-In</h2>
+      )}
+
       <HomeHeader />
       <Animation />
       <WeAreBetter />

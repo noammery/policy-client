@@ -4,6 +4,7 @@ import axios from "axios";
 import { ThemeContext } from "@emotion/react";
 import { useDispatch } from "react-redux";
 import { update } from "../../reducers/theUserSlice";
+import { Link } from "react-router-dom";
 export const usesNow = React.createContext();
 function Login() {
   const dispatch = useDispatch();
@@ -59,7 +60,9 @@ function Login() {
             />
           </div>
         </div>
-        <button onClick={() => handleSubmit()}>Login</button>
+        <Link to="/">
+          <button onClick={() => handleSubmit()}>Login</button>
+        </Link>
       </ThemeContext.Provider>
     </div>
   );

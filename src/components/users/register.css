@@ -2,6 +2,9 @@
   color: red;
   text-decoration: none;
 }
+.Register {
+  text-align: center;
+}
 .Register form {
   display: flex;
   flex-direction: column;
