@@ -1,7 +1,8 @@
 .Home {
+  height: 200vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   background: #e0eafc;
   background: -webkit-linear-gradient(to top, #cfdef3, #e0eafc);
