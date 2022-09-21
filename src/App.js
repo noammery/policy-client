@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
-import Policy from "./components/policy/Policy";
 import Users from "./components/users/Users";
+import DateRangePickerComp from "./components/policy/Date_Place"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="users" element={<Users />} />
-        <Route path="policy" element={<Policy />} />
+        <Route path="Date_Place" element={<DateRangePickerComp></DateRangePickerComp>} />
       </Routes>
     </div>
   );
