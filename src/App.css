@@ -2,13 +2,8 @@
   font-family: "Barlow", sans-serif;
 }
 
-body {
-  padding: 40px;
-}
-
 .App {
   text-align: center;
-  font-size: 22px;
 }
 
 input.inputBox {
@@ -29,5 +24,5 @@ input.inputBox {
   transform: translateX(-50%);
   top: 40px;
   border: 1px solid lightskyblue;
-  z-index:999;
+  z-index: 999;
 }
