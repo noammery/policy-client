@@ -9,6 +9,8 @@ import Register from "./components/users/Register";
 
 
 import DateRangePickerComp from "./components/policy/Date_Place"
+import Payment from "./components/policy/Payment";
+import Type from "./components/policy/Type_Policy";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
 
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="/Date_Place/type" element={<Type />}></Route>
+        {/* <Route path="payment" element={<Payment />} /> */}
        
 
      
