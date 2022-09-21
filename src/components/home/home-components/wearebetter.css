@@ -1,6 +1,31 @@
 .WeAreBetter {
-  height: 20vw;
+  text-align: center;
+  height: 22vw;
   width: 75vw;
   background: white;
   box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.5);
+}
+.better-header h1 {
+  margin-left: 10vw;
+}
+.better-header h3 {
+  margin-top: 5vh;
+  color: rgba(255, 0, 0, 0.4);
+  margin-right: 10vw;
+}
+.better-icons {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.theIcons {
+  transition: 0.4s;
+}
+.theIcons:hover {
+  scale: 1.3;
+}
+
+.better-icons h4 {
+  color: #1cb0f6;
 }
