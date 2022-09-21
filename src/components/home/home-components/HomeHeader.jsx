@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./homeheader.css";
 
 function HomeHeader() {
+  const theUser = useSelector((state) => state.theUser);
   return (
     <div className="HomeHeader">
       <h1>FLY SAFE WITH US</h1>

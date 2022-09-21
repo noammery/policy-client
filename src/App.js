@@ -6,13 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import Login from "./components/users/Login";
 import Register from "./components/users/Register";
 
-
-
-import DateRangePickerComp from "./components/policy/Date_Place"
-import Payment from "./components/policy/Payment";
-import Type from "./components/policy/Type_Policy";
-
-
+import DateRangePickerComp from "./components/policy/Date_Place";
 
 function App() {
   return (
@@ -20,22 +14,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
-
- 
- 
-       
-
-     
-        <Route path="Date_Place" element={<DateRangePickerComp></DateRangePickerComp>} />
-
-
-        <Route
-          path="Date_Place"
-          element={<DateRangePickerComp></DateRangePickerComp>}
-        />
+        <Route path="Date_Place" element={<DateRangePickerComp />} />
       </Routes>
     </div>
   );
