@@ -19,7 +19,7 @@ const DateRangePickerComp = () => {
         key: 'selection'
       }
     ])
-    console.log(range);
+    
     const [open, setOpen] = useState(false)
   
     const refOne = useRef(null)

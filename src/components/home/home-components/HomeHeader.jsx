@@ -14,7 +14,7 @@ function HomeHeader() {
         alt=""
         className="header-img"
       />
-      <Link to="/policy">
+      <Link to="Date_Place">
         <button className="button-19">Purchase POLICY</button>
       </Link>
     </div>
