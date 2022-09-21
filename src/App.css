@@ -1,3 +1,33 @@
 * {
   font-family: "Barlow", sans-serif;
 }
+
+body {
+  padding: 40px;
+}
+
+.App {
+  text-align: center;
+  font-size: 22px;
+}
+
+input.inputBox {
+  font-size: 22px;
+  padding: 5px 8px 4px 8px;
+  border-radius: 5px;
+  border: 1px solid lightskyblue;
+}
+
+.calendarWrap {
+  display: inline-block;
+  position: relative;
+}
+
+.calendarElement {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  border: 1px solid lightskyblue;
+  z-index:999;
+}
