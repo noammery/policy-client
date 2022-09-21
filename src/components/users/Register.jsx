@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./register.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 const schema = yup.object().shape({
   firstName: yup
     .string()
@@ -43,10 +43,24 @@ export default function Register() {
     reset,
   } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    setUsers([...users, data]);
+    await axios.post(`http://localhost:3001/api/users`, data);
+    console.log(users);
     alert(JSON.stringify(data));
     reset();
   };
+  const [users, setUsers] = useState([]);
+
+  const getUsers = () => {
+    axios.get(`http://localhost:3001/api/users`).then((res) => {
+      res.data && setUsers(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getUsers();
+  }, []);
 
   return (
     <div className="Register">
