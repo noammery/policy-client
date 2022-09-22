@@ -5,13 +5,14 @@ import { ThemeContext } from "@emotion/react";
 import { useDispatch } from "react-redux";
 import { update } from "../../reducers/theUserSlice";
 import { Link } from "react-router-dom";
+import LoginIcon from "@mui/icons-material/Login";
 export const usesNow = React.createContext();
 function Login() {
   const dispatch = useDispatch();
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [users, setUsers] = useState([]);
-  const [theUser, setTheUser] = useState("");
+  const theUser = useState("");
   const handlePasswordChange = (value) => {
     setPassword(value);
   };
@@ -37,33 +38,38 @@ function Login() {
   }, []);
 
   return (
-    <div className="Login">
-      <ThemeContext.Provider value={theUser}>
-        <h1>Log-in</h1>
-        <div className="inputsContainer">
-          <div className="input">
-            <label>First Name</label>
-            <input
-              type="text"
-              onChange={(e) => {
-                handleNameChange(e.target.value);
-              }}
-            />
+    <div className="loginContainer">
+      <div className="Login">
+        <ThemeContext.Provider value={theUser}>
+          <h1>
+            Log-in <LoginIcon />
+          </h1>
+
+          <div className="inputsContainer">
+            <div className="input">
+              <label>First Name</label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  handleNameChange(e.target.value);
+                }}
+              />
+            </div>
+            <div className="input">
+              <label>Password</label>
+              <input
+                type="password"
+                onChange={(e) => {
+                  handlePasswordChange(e.target.value);
+                }}
+              />
+            </div>
           </div>
-          <div className="input">
-            <label>Password</label>
-            <input
-              type="password"
-              onChange={(e) => {
-                handlePasswordChange(e.target.value);
-              }}
-            />
-          </div>
-        </div>
-        <Link to="/">
-          <button onClick={() => handleSubmit()}>Login</button>
-        </Link>
-      </ThemeContext.Provider>
+          <Link to="/">
+            <button onClick={() => handleSubmit()}>Login</button>
+          </Link>
+        </ThemeContext.Provider>
+      </div>
     </div>
   );
 }

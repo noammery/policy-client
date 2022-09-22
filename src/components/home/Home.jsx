@@ -3,20 +3,24 @@ import HomeHeader from "./home-components/HomeHeader";
 import WeAreBetter from "./home-components/WeAreBetter";
 import { useSelector } from "react-redux";
 import "./home.css";
+import Footer from "../footer/footer";
 
 function Home() {
   const theUser = useSelector((state) => state.theUser);
   return (
     <div className="Home">
       {theUser.name ? (
-        <h2>Welcome back! {theUser.name}</h2>
+        <h4 className="welcome">Welcome back! {theUser.name}</h4>
       ) : (
-        <h2 style={{ color: "red" }}>Please Sign-In</h2>
+        <h4 className="welcome" style={{ color: "red" }}>
+          Please Sign-In
+        </h4>
       )}
 
       <HomeHeader />
       <Animation />
       <WeAreBetter />
+      <Footer />
     </div>
   );
 }

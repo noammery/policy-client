@@ -1,4 +1,6 @@
 .Footer {
+  margin-top: 10vh;
+  width: 100vw;
   height: 25vh;
   background: white;
   display: flex;

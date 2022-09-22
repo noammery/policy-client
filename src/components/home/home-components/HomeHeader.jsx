@@ -6,7 +6,7 @@ function HomeHeader() {
   const theUser = useSelector((state) => state.theUser);
   return (
     <div className="HomeHeader">
-      <h1>FLY SAFE WITH US</h1>
+      <h1>PROTECT YOUR TRIP!</h1>
       <div className="h3-p-container">
         <h3 className="header-h3">M&M policy</h3>
         <p className="header-p">every flight starts with insurance.</p>
@@ -20,6 +20,7 @@ function HomeHeader() {
       {theUser.name ? (
         <Link to="Date_Place">
           <button className="button-19">Purchase POLICY</button>
+          <h6></h6>
         </Link>
       ) : (
         <div>

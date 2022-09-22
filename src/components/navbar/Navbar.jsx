@@ -7,10 +7,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 export default function ButtonAppBar() {
   const theUser = useSelector((state) => state.theUser);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className="box">
       <AppBar position="static" color="inherit">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
