@@ -11,7 +11,7 @@ function Home() {
       {theUser.name ? (
         <h2>Welcome back! {theUser.name}</h2>
       ) : (
-        <h2>Please Sign-In</h2>
+        <h2 style={{ color: "red" }}>Please Sign-In</h2>
       )}
 
       <HomeHeader />
