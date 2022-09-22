@@ -9,6 +9,7 @@ import Register from "./components/users/Register";
 import DateRangePickerComp from "./components/policy/Date_Place";
 import Allusers from "./components/users/Allusers";
 import { useSelector } from "react-redux";
+import Footer from "./components/footer/footer";
 
 function App() {
   const theUser = useSelector((state) => state.theUser);
@@ -24,8 +25,10 @@ function App() {
         ) : (
           <></>
         )}
+
         <Route path="Date_Place" element={<DateRangePickerComp />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
