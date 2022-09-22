@@ -10,6 +10,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import BasicModal from "./modal";
+import axios from "axios";
 
 const schema = yup
   .object()
@@ -47,7 +49,6 @@ const DateRangePickerComp = () => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
-  const onSubmit = (data) => console.log(data);
   console.log(errors);
 
   const [step, setStep] = useState(1);
@@ -132,11 +133,29 @@ const DateRangePickerComp = () => {
   const handleSubmit1 = () => {
     setMuch(much + tempMuch);
   };
+  const [disabled, setDisabled] = useState(true);
+
+  const [policys, setPolicys] = useState([]);
+
+  const onSubmit = async (data) => {
+    setPolicys([...policys, data]);
+    await axios.post(`http://localhost:3001/policyapi/policy`, data);
+    alert(JSON.stringify(data));
+  };
+  const getPolicys = () => {
+    axios.get(`http://localhost:3001/policyapi/policy`).then((res) => {
+      res.data && setPolicys(res.data);
+    });
+  };
+  useEffect(() => {
+    getPolicys();
+  }, []);
+  console.log(policys);
   return (
     <div className="allOfMaximWork">
       {step === 1 ? (
         <div className="calendarWrap">
-          <h1>Pick Dates</h1>
+          <h1>Pick Your Dates:</h1>
           <input
             value={`${format(range[0].startDate, "MM/dd/yyyy")} to ${format(
               range[0].endDate,
@@ -146,7 +165,6 @@ const DateRangePickerComp = () => {
             className="inputBox"
             onClick={() => setOpen((open) => !open)}
           />
-
           <div ref={refOne}>
             {open && (
               <DateRangePicker
@@ -160,42 +178,77 @@ const DateRangePickerComp = () => {
               />
             )}
           </div>
-
+          <h1>✈️Pick a region✈️</h1>
           <div className="Continent">
-            <h1>Pick a region</h1>
-            <div onClick={() => setRegion("America")}>
+            <div
+              className={`regionDiv ${region === "America" ? "black" : <></>}`}
+              onClick={() => setRegion("America")}
+            >
               <p>America</p>
             </div>
-            <div onClick={() => setRegion("South America")}>
+            <div
+              className={`regionDiv ${
+                region === "South America" ? "black" : <></>
+              }`}
+              onClick={() => setRegion("South America")}
+            >
               <p>South America</p>
             </div>
-            <div onClick={() => setRegion("Asia")}>
+            <div
+              className={`regionDiv ${region === "Asia" ? "black" : <></>}`}
+              onClick={() => setRegion("Asia")}
+            >
               <p>Asia</p>
             </div>
-            <div onClick={() => setRegion("Europe")}>
+            <div
+              className={`regionDiv ${region === "Europe" ? "black" : <></>}`}
+              onClick={() => setRegion("Europe")}
+            >
               <p>Europe</p>
             </div>
-            <div onClick={() => setRegion("Africa")}>
+            <div
+              className={`regionDiv ${region === "Africa" ? "black" : <></>}`}
+              onClick={() => setRegion("Africa")}
+            >
               <p>Africa</p>
             </div>
-            <div onClick={() => setRegion("Australia")}>
+            <div
+              className={`regionDiv ${
+                region === "Australia" ? "black" : <></>
+              }`}
+              onClick={() => setRegion("Australia")}
+            >
               <p>Australia</p>
             </div>
-            <div onClick={() => setRegion("Antartica")}>
+            <div
+              className={`regionDiv ${
+                region === "Antartica" ? "black" : <></>
+              }`}
+              onClick={() => setRegion("Antartica")}
+            >
               <p>Antartica</p>
             </div>
-            <div onClick={() => setRegion("Israel")}>
+            <div
+              className={`regionDiv ${region === "Israel" ? "black" : <></>}`}
+              onClick={() => setRegion("Israel")}
+            >
               <p>Israel</p>
             </div>
           </div>
-
-          <button onClick={() => setStep(2)}>next</button>
+          {region === "" ? (
+            <></>
+          ) : (
+            <button onClick={() => setStep(2)} className="button-19 next">
+              next
+            </button>
+          )}
         </div>
       ) : step == 2 ? (
         <div>
           <div className="Type">
+            <h1>What policy are you searching for?</h1>
             <div className="insuranceContainer">
-              <div className="party">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick}
                   checked={checked}
@@ -203,7 +256,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked ? "green" : null}>Third Side Party</p>
               </div>
-              <div className="search">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick1}
                   checked={checked1}
@@ -211,7 +264,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked1 ? "green" : null}>Search And Rescue</p>
               </div>
-              <div className="winter">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick2}
                   checked={checked2}
@@ -219,7 +272,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked2 ? "green" : null}>Winter Sport</p>
               </div>
-              <div className="water">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick3}
                   checked={checked3}
@@ -227,7 +280,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked3 ? "green" : null}>Water Sport</p>
               </div>
-              <div className="extreme">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick4}
                   checked={checked4}
@@ -235,7 +288,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked4 ? "green" : null}>Extreme Sport</p>
               </div>
-              <div className="luggage">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick5}
                   checked={checked5}
@@ -243,7 +296,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked5 ? "green" : null}>Luggage</p>
               </div>
-              <div className="cellphone">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick6}
                   checked={checked6}
@@ -251,7 +304,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked6 ? "green" : null}>Cellphone</p>
               </div>
-              <div className="laptop">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick7}
                   checked={checked7}
@@ -259,7 +312,7 @@ const DateRangePickerComp = () => {
                 />
                 <p className={checked7 ? "green" : null}>Laptop</p>
               </div>
-              <div className="medical">
+              <div className="insuranceType">
                 <input
                   onClick={handleClick8}
                   checked={checked8}
@@ -270,55 +323,96 @@ const DateRangePickerComp = () => {
                 </p>
               </div>
             </div>
-            <button onClick={() => handleSubmit1()}>submit choices</button>
-            {much}
+            {disabled ? (
+              <button
+                className="button-19 next"
+                onClick={() => {
+                  handleSubmit1();
+                  setDisabled(false);
+                }}
+              >
+                submit choices
+              </button>
+            ) : (
+              <></>
+            )}
+
+            <h1>Current total:{much}₪</h1>
           </div>
-          <button onClick={() => setStep(3)}>next</button>
+          <button onClick={() => setStep(3)} className="button-19 next">
+            next
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h4>
-            trip to {region}
-            <br />
-            from <br />
-            {range[0].startDate.toString()}
-            <br />
-            until <br />
-            {range[0].endDate.toString()}
-          </h4>
-          <div>
-            <label>Credit Card Number</label>
-            <input {...register("CreditCardNumber")} />
-            {errors?.CreditCardNumber && (
-              <p>{errors?.CreditCardNumber?.message || "Error!"}</p>
-            )}
+          <div className="data-purchase">
+            <div className="dataContainer">
+              <h2>Your Current policy</h2>
+              <h3>Total to pay: {much}₪</h3>
+              <br />
+              <h3>trip to {region}</h3>
+              <br />
+              <h3>
+                <h2
+                  style={{
+                    fontWeight: "900",
+                    color: "gold",
+                    textDecoration: "2px solid black underline",
+                  }}
+                >
+                  From:
+                </h2>
+                {range[0].startDate.toString()}
+                <br />
+                <h2
+                  style={{
+                    fontWeight: "900",
+                    color: "gold",
+                    textDecoration: "2px solid black underline",
+                  }}
+                >
+                  Until:
+                </h2>
+                {range[0].endDate.toString()}
+              </h3>
+            </div>
+            <div className="purchaseContainer">
+              <div className="inputs">
+                <label>Credit Card Number</label>
+                <input {...register("CreditCardNumber")} />
+                {errors?.CreditCardNumber && (
+                  <p>{errors?.CreditCardNumber?.message || "Error!"}</p>
+                )}
+              </div>
+              <div className="inputs">
+                <label>Expiration Date</label>
+                <input {...register("ExpirationDate")} />
+                {errors?.ExpirationDate && (
+                  <p>{errors?.ExpirationDate?.message || "Error!"}</p>
+                )}
+              </div>
+              <div className="inputs">
+                <label>CVV</label>
+                <input placeholder="cvv" {...register("cvv")} />
+                {errors?.cvv && <p>{errors?.cvv?.message || "Error!"}</p>}
+              </div>
+              <div className="inputs">
+                <label>Card Holder Full Name</label>
+                <input {...register("CardHolderFullName")} />
+                {errors?.CardHolderFullName && (
+                  <p>{errors?.CardHolderFullName?.message || "Error!"}</p>
+                )}
+              </div>
+              <div className="inputs">
+                <label>ID</label>
+                <input placeholder="ID" {...register("PersonID")} />
+              </div>
+              {errors?.PersonID && (
+                <p>{errors?.PersonID?.message || "Error!"}</p>
+              )}
+            </div>
           </div>
-          <div>
-            <label>Expiration Date</label>
-            <input {...register("ExpirationDate")} />
-            {errors?.ExpirationDate && (
-              <p>{errors?.ExpirationDate?.message || "Error!"}</p>
-            )}
-          </div>
-          <div>
-            <label></label>
-            <input placeholder="cvv" {...register("cvv")} />
-            {errors?.cvv && <p>{errors?.cvv?.message || "Error!"}</p>}
-          </div>
-          <div>
-            <label>Card Holder Full Name</label>
-            <input {...register("CardHolderFullName")} />
-            {errors?.CardHolderFullName && (
-              <p>{errors?.CardHolderFullName?.message || "Error!"}</p>
-            )}
-          </div>
-          <div>
-            <label>ID</label>
-            <input placeholder="ID" {...register("PersonID")} />
-          </div>
-          {errors?.PersonID && <p>{errors?.PersonID?.message || "Error!"}</p>}
-
-          <input type="submit" disabled={!isValid} />
+          <BasicModal isValid={isValid}></BasicModal>
         </form>
       )}
     </div>

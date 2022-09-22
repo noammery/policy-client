@@ -1,3 +1,70 @@
 .allOfMaximWork {
   text-align: center;
 }
+.regionDiv {
+  border: 2px solid #1cb0f6;
+  border-radius: 25px;
+  margin: 1vw;
+  transition: 0.4s;
+  width: 20vw;
+}
+.regionDiv:hover {
+  border: 2px solid blue;
+  scale: 1.08;
+  box-shadow: 2px 2px 2px #1cb0f6;
+}
+.Continent {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 40vh;
+}
+.black {
+  background-color: rgba(70, 70, 249, 0.2);
+}
+.next {
+  width: 20vw;
+}
+.insuranceType {
+  display: flex;
+}
+.insuranceType p {
+  text-decoration: 2px dotted red underline;
+}
+.insuranceContainer {
+  width: 100vw;
+  align-content: space-between;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  flex-wrap: wrap;
+}
+.purchaseContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  align-items: center;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+}
+.dataContainer h3 {
+  margin: 0;
+}
+.data-purchase {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
