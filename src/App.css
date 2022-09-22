@@ -22,3 +22,76 @@ input.inputBox {
   border: 1px solid lightskyblue;
   z-index: 999;
 }
+@media only screen and (max-width: 391px) {
+  .HomeHeader {
+    width: 90vw !important;
+    height: 50vh !important;
+    justify-content: space-around;
+  }
+  .HomeHeader > .header-img {
+    width: 50vw;
+  }
+  .HomeHeader h1 {
+    font-size: 6vw !important;
+  }
+  .imges {
+    width: 40vw !important;
+  }
+  .WeAreBetter {
+    height: 52vh !important;
+    width: 90vw !important;
+  }
+  .Footer {
+    height: 35vh !important;
+  }
+  .Footer p {
+    width: 50vw;
+  }
+  .footerImg {
+    width: 10vw !important;
+    height: 10vw !important;
+  }
+  .smallForm input {
+    width: 25vw !important;
+  }
+  .Register form {
+    justify-content: space-between;
+  }
+  .regionDiv {
+    width: 70vw !important;
+    height: 6vh !important;
+  }
+  .Continent {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    height: fit-content !important;
+  }
+  .insuranceType {
+    font-size: 5vw !important;
+    font-weight: 900 !important;
+  }
+  .insuranceContainer {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    height: 100% !important;
+  }
+  .data-purchase {
+    flex-direction: column;
+  }
+  .dataContainer {
+    margin-bottom: 10vh;
+  }
+  .purchaseContainer label {
+    font-weight: 900 !important;
+    font-size: 5.5vw !important;
+  }
+  .Animation {
+    padding: 0 !important;
+  }
+  .Login {
+    width: auto !important;
+  }
+  .loginContainer {
+    height: 94vh;
+  }
+}

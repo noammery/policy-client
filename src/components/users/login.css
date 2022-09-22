@@ -18,5 +18,18 @@
   text-decoration: underline solid 2px red;
 }
 .Login {
+  background-color: white;
+  width: 50vw;
   text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px black;
+}
+.loginContainer {
+  background: url(https://cdn.pixabay.com/photo/2016/09/14/20/03/airplane-1670266_1280.jpg);
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

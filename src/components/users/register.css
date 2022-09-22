@@ -3,7 +3,13 @@
   text-decoration: none;
 }
 .Register {
+  background-color: white;
+  width: 60vw;
   text-align: center;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: 5px 5px 5px black;
 }
 .Register form {
   display: flex;

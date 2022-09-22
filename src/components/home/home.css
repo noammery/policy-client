@@ -9,3 +9,9 @@
   background: -webkit-linear-gradient(to top, #cfdef3, #e0eafc);
   background: linear-gradient(to top, #cfdef3, #e0eafc);
 }
+.welcome {
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 6px;
+  background-color: white;
+}
