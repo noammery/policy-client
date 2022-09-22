@@ -1,0 +1,15 @@
+.Allusers {
+  text-align: center;
+  width: 100vw;
+}
+.Allusers ol {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.Allusers h4 {
+  text-decoration: underline solid 2px red;
+}
+.Allusers h1 {
+  color: #1cb0f6;
+}

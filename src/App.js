@@ -7,8 +7,11 @@ import Login from "./components/users/Login";
 import Register from "./components/users/Register";
 
 import DateRangePickerComp from "./components/policy/Date_Place";
+import Allusers from "./components/users/Allusers";
+import { useSelector } from "react-redux";
 
 function App() {
+  const theUser = useSelector((state) => state.theUser);
   return (
     <div className="App">
       <Navbar />
@@ -16,6 +19,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        {theUser.name === "admin" ? (
+          <Route path="allusers" element={<Allusers />} />
+        ) : (
+          <></>
+        )}
         <Route path="Date_Place" element={<DateRangePickerComp />} />
       </Routes>
     </div>

@@ -16,9 +16,19 @@ function HomeHeader() {
         alt=""
         className="header-img"
       />
-      <Link to="Date_Place">
-        <button className="button-19">Purchase POLICY</button>
-      </Link>
+
+      {theUser.name ? (
+        <Link to="Date_Place">
+          <button className="button-19">Purchase POLICY</button>
+        </Link>
+      ) : (
+        <div>
+          <button className="button-19" disabled>
+            Purchase POLICY
+          </button>
+          <h6 style={{ color: "red" }}>(Log-in to purchase)</h6>
+        </div>
+      )}
     </div>
   );
 }
