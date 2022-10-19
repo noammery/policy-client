@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./login.css";
 import axios from "axios";
 import { ThemeContext } from "@emotion/react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { update } from "../../reducers/theUserSlice";
 import { Link } from "react-router-dom";
+
 import LoginIcon from "@mui/icons-material/Login";
 export const usesNow = React.createContext();
 function Login() {
   const dispatch = useDispatch();
+  // const state = useSelector((allStates) => allStates.state.value);
+  // dispatch(function1())
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [users, setUsers] = useState([]);

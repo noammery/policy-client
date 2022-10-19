@@ -140,7 +140,6 @@ const DateRangePickerComp = () => {
   const onSubmit = async (data) => {
     setPolicys([...policys, data]);
     await axios.post(`http://localhost:3001/policyapi/policy`, data);
-    alert(JSON.stringify(data));
   };
   const getPolicys = () => {
     axios.get(`http://localhost:3001/policyapi/policy`).then((res) => {
@@ -254,7 +253,9 @@ const DateRangePickerComp = () => {
                   checked={checked}
                   type="checkbox"
                 />
-                <p className={checked ? "green" : null}>Third Side Party</p>
+                <p className={checked ? "green" : null}>
+                  Third Side Party - 1₪
+                </p>
               </div>
               <div className="insuranceType">
                 <input
@@ -262,7 +263,9 @@ const DateRangePickerComp = () => {
                   checked={checked1}
                   type="checkbox"
                 />
-                <p className={checked1 ? "green" : null}>Search And Rescue</p>
+                <p className={checked1 ? "green" : null}>
+                  Search And Rescue - 2₪{" "}
+                </p>
               </div>
               <div className="insuranceType">
                 <input
@@ -270,7 +273,7 @@ const DateRangePickerComp = () => {
                   checked={checked2}
                   type="checkbox"
                 />
-                <p className={checked2 ? "green" : null}>Winter Sport</p>
+                <p className={checked2 ? "green" : null}>Winter Sport - 3₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -278,7 +281,7 @@ const DateRangePickerComp = () => {
                   checked={checked3}
                   type="checkbox"
                 />
-                <p className={checked3 ? "green" : null}>Water Sport</p>
+                <p className={checked3 ? "green" : null}>Water Sport - 4₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -286,7 +289,7 @@ const DateRangePickerComp = () => {
                   checked={checked4}
                   type="checkbox"
                 />
-                <p className={checked4 ? "green" : null}>Extreme Sport</p>
+                <p className={checked4 ? "green" : null}>Extreme Sport - 5₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -294,7 +297,7 @@ const DateRangePickerComp = () => {
                   checked={checked5}
                   type="checkbox"
                 />
-                <p className={checked5 ? "green" : null}>Luggage</p>
+                <p className={checked5 ? "green" : null}>Luggage - 6₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -302,7 +305,7 @@ const DateRangePickerComp = () => {
                   checked={checked6}
                   type="checkbox"
                 />
-                <p className={checked6 ? "green" : null}>Cellphone</p>
+                <p className={checked6 ? "green" : null}>Cellphone - 7₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -310,7 +313,7 @@ const DateRangePickerComp = () => {
                   checked={checked7}
                   type="checkbox"
                 />
-                <p className={checked7 ? "green" : null}>Laptop</p>
+                <p className={checked7 ? "green" : null}>Laptop - 8₪</p>
               </div>
               <div className="insuranceType">
                 <input
@@ -319,7 +322,7 @@ const DateRangePickerComp = () => {
                   type="checkbox"
                 />
                 <p className={checked8 ? "green" : null}>
-                  Deterioration In Medical Condition
+                  Deterioration In Medical Condition - 9₪
                 </p>
               </div>
             </div>

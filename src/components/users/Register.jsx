@@ -48,7 +48,6 @@ export default function Register() {
     setUsers([...users, data]);
     await axios.post(`http://localhost:3001/api/users`, data);
     console.log(users);
-    reset();
   };
   const [users, setUsers] = useState([]);
 
@@ -65,9 +64,7 @@ export default function Register() {
   return (
     <div className="loginContainer">
       <div className="Register">
-        <h1>
-          REGISTER <PersonAddIcon />
-        </h1>
+        <h1>REGISTER</h1>
         <h4>
           If you already have an account 👉<Link to="/login">Log-in</Link>
         </h4>
