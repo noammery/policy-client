@@ -7,6 +7,7 @@ M&M policy is an insurance website, with multiple types of insurance available.
 - [M&M policy](#M&M-policy)
   - [Why was Mַ&M-policy made.](#Why-was-M&M-policy-made)
   - [Running the project](#running-the-project)
+  - [Screenshots](#screenshots)
   - [Technologies](#technologies)
     - [Client-Side](#client-side)
     - [Server-Side](#server-side)
@@ -24,6 +25,14 @@ M&M policy was made as a project for an hackathon event during our FullStack cou
 5. go back to the root folder.
 6. Run `npm start`.
 7. Navigate to `http://localhost:3000`.
+
+## Screenshots
+
+### M&M Homepage
+
+An interactive home-page, login and buy an insurance!
+
+<p align="center"><img src="./readme.png" width="300" /></p>
 
 ## Technologies:
 
