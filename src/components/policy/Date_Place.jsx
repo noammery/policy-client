@@ -242,7 +242,7 @@ const DateRangePickerComp = () => {
             </button>
           )}
         </div>
-      ) : step == 2 ? (
+      ) : step === 2 ? (
         <div>
           <div className="Type">
             <h1>What policy are you searching for?</h1>

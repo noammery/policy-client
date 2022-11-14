@@ -5,7 +5,6 @@ import "./register.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
 const schema = yup.object().shape({
   firstName: yup
     .string()
@@ -41,7 +40,6 @@ export default function Register() {
     register,
     formState: { errors, isValid },
     handleSubmit,
-    reset,
   } = useForm({ mode: "onBlur", resolver: yupResolver(schema) });
 
   const onSubmit = async (data) => {
