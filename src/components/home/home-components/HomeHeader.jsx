@@ -20,7 +20,6 @@ function HomeHeader() {
       {theUser.name ? (
         <Link to="Date_Place">
           <button className="button-19">Purchase POLICY</button>
-          <h6></h6>
         </Link>
       ) : (
         <div>
